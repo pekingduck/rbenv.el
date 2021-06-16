@@ -35,6 +35,12 @@ customize rbenv.el to search in the right place:
 
 *IMPORTANT:*: Currently you need to set this variable before you load rbenv.el
 
+**rbenv executable path** 
+By default rbenv.el assumes the `rbenv` executable is
+under `rbenv-installation-dir`/bin. Override this if `rbenv` was installed under
+a different directory. (Homebrew installs rbenv in `/usr/local/bin`.
+
+
 **the modeline**
 rbenv.el will show you the active ruby in the modeline. If you don't
 like this feature you can disable it:

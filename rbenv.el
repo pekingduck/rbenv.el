@@ -46,6 +46,11 @@
   :group 'rbenv
   :type 'directory)
 
+(defcustom rbenv-bin-path "rbenv"
+  "The path to the rbenv.el executable."
+  :group 'rbenv
+  :type 'file)
+
 (defun rbenv--expand-path (&rest segments)
   (let ((path (mapconcat 'identity segments "/"))
         (installation-dir (replace-regexp-in-string "/$" "" rbenv-installation-dir)))
@@ -67,9 +72,10 @@
   :group 'rbenv
   :type 'function)
 
-(defvar rbenv-executable (rbenv--expand-path "bin" "rbenv")
+(defvar rbenv-executable (or rbenv-bin-path
+			     (rbenv--expand-path "bin" "rbenv"))
   "path to the rbenv executable")
-  
+
 (defvar rbenv-ruby-shim (rbenv--expand-path "shims" "ruby")
   "path to the ruby shim executable")
 

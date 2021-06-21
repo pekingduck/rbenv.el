@@ -46,7 +46,7 @@
   :group 'rbenv
   :type 'directory)
 
-(defcustom rbenv-bin-path "rbenv"
+(defcustom rbenv-bin-path nil
   "The path to the rbenv.el executable."
   :group 'rbenv
   :type 'file)
